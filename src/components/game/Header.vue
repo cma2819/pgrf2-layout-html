@@ -1,5 +1,5 @@
 <template>
-  <img id="logo" src="/assets/pgrf/images/pgrf_logo_simple.png" />
+  <img id="logo" src="/assets/pgrf/images/pgrf2_logo_simple.png" />
   <div id="title">
     <p id="game-title">{{ info.title }}</p>
     <p id="category-platform">{{ info.category }} - {{ info.platform }}</p>

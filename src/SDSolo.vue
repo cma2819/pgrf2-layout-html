@@ -65,8 +65,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import '/src/assets/common.css';
-@import '/src/assets/game.css';
+@import '/src/stylesheets/common.css';
+@import '/src/stylesheets/game.css';
 
 $marginX: 64px;
 

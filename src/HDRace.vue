@@ -79,8 +79,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import '/src/assets/common.css';
-@import '/src/assets/game.css';
+@import '/src/stylesheets/common.css';
+@import '/src/stylesheets/game.css';
 
 header {
   margin: 0 16px;

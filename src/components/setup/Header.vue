@@ -3,7 +3,7 @@
   <span id="presents">presents</span>
   <img
     id="logo-pgrf"
-    src="/assets/pgrf/images/pgrf_logo_simple.png"
+    src="/assets/pgrf/images/pgrf2_logo_simple.png"
     alt="PGRF"
   />
   <div id="now" class="time">{{ formattedTIme }}</div>

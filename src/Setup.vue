@@ -23,7 +23,7 @@ import WatchReplicant from './components/WatchReplicant.vue'
 </script>
 
 <style>
-@import '/src/assets/common.css';
+@import '/src/stylesheets/common.css';
 
 #root {
   display: flex;
