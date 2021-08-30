@@ -1,4 +1,5 @@
 <template>
+  <WatchReplicant />
   <Background animated></Background>
   <header>
     <Header></Header>
@@ -18,6 +19,7 @@ import Header from './components/setup/Header.vue'
 import Footer from './components/setup/Footer.vue'
 import Schedule from './components/setup/Schedule.vue'
 import Tweet from './components/Tweet.vue'
+import WatchReplicant from './components/WatchReplicant.vue'
 </script>
 
 <style>
