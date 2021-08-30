@@ -87,11 +87,6 @@ onMounted(() => {
   /** @type import('../../../nodecg/twitter').TwitterWidgetInstance */
   const twitterNodecg = nodecg;
   twitterNodecg.Replicant('activeTweet', 'nodecg-twitter-widget').on('change', (newVal) => {
-    console.log(newVal && {
-      id: newVal.screenName,
-      icon: newVal.profileImageUrl,
-      content: newVal.text,
-    })
     state.dispatch('setTweet', newVal && {
       id: newVal.screenName,
       icon: newVal.profileImageUrl,
