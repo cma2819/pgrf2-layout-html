@@ -1,4 +1,5 @@
 <template>
+  <WatchReplicant></WatchReplicant>
   <Background></Background>
   <header>
     <Header></Header>
@@ -60,6 +61,7 @@ import Split from './components/game/Split.vue'
 import Video from './components/game/Video.vue'
 import Tweet from './components/Tweet.vue'
 import Footer from './components/game/Footer.vue'
+import WatchReplicant from './components/WatchReplicant.vue'
 
 const width = ref(`${1920 * 0.48}px`)
 const height = ref(`${1080 * 0.48}px`)

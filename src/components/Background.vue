@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, onMounted } from 'vue'
 import BlinkSquare from './background/BlinkSquare.vue'
 import Square from './background/Square.vue'
 
@@ -26,6 +26,12 @@ const props = defineProps({
   animated: Boolean
 })
 const boxCount = ref(60)
+
+onMounted(() => {
+  nodecg.Replicant('assets:background').on('change', (newVal) => {
+    document.getElementById('root').style.backgroundImage = `url(${newVal[0]?.url})`
+  })
+})
 </script>
 
 <style scoped>

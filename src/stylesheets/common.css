@@ -14,7 +14,7 @@ p {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/assets/pgrf/images/back.png');
+  /* background-image: url('/assets/pgrf/images/back.png'); */
   font-size: 18pt;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <WatchReplicant />
+  <WatchReplicant></WatchReplicant>
   <Background animated></Background>
   <header>
     <Header></Header>

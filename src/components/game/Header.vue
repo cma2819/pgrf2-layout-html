@@ -1,5 +1,5 @@
 <template>
-  <img id="logo" src="/assets/pgrf/images/pgrf2_logo_simple.png" />
+  <img id="logo" :src="logo" />
   <div id="title">
     <p id="game-title">{{ info.title }}</p>
     <p id="category-platform">{{ info.category }} - {{ info.platform }}</p>
@@ -7,11 +7,22 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 
 const store = useStore()
 const info = computed(() => store.getters.headerInfo)
+
+const logo = ref('');
+
+onMounted(() => {
+  nodecg.Replicant('assets:logo').on('change', (newVal) => {
+    logo.value = newVal.url;
+  });
+})
+
+create
+
 </script>
 
 <style lang="scss" scoped>

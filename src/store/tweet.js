@@ -1,7 +1,7 @@
 import testData from './test-data/tweet.js'
 export default {
   state: () => ({
-    tweet: testData
+    tweet: null
   }),
   getters: {
     tweet: ({ tweet }) => tweet
