@@ -7,7 +7,7 @@ export default [
     est: '00:10:00',
     runners: [
       {
-        id: 1,
+        id: "team-id-a",
         name: '走者A',
         accounts: {
           twitch: 'twitchA',
@@ -33,7 +33,7 @@ export default [
     est: '00:20:00',
     runners: [
       {
-        id: 1,
+        id: "team-id-a",
         name: '走者B',
         accounts: {
           twitter: 'twitterB',
@@ -41,7 +41,7 @@ export default [
         }
       },
       {
-        id: 2,
+        id: "team-id-b",
         name: '走者C',
         accounts: {
           twitch: 'twitchC',
@@ -82,7 +82,7 @@ export default [
     est: '00:30:00',
     runners: [
       {
-        id: 1,
+        id: "team-id-a",
         name: '走者DDDDDDDDDDDD',
         accounts: {
           twitch: 'twitchDDDDDDDDDDDDDDDDDDD',
@@ -108,7 +108,7 @@ export default [
     est: '00:40:00',
     runners: [
       {
-        id: 1,
+        id: "team-id-a",
         name: '走者E',
         accounts: {
           twitch: 'twitchE',

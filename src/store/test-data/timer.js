@@ -3,8 +3,12 @@ export default {
   status: 'suspend',
   split: [
     {
-      id: 1,
+      id: "team-id-a",
       time: '00:11:11'
+    },
+    {
+      id: "team-id-b",
+      time: '00:12:34'
     }
   ]
 }

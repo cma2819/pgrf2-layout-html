@@ -8,7 +8,7 @@ export default {
   },
   mutations: {
     setTweet (state, tweet) {
-      state = tweet
+      state.tweet = tweet
     }
   },
   actions: {
