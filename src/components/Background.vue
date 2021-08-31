@@ -27,11 +27,6 @@ const props = defineProps({
 })
 const boxCount = ref(60)
 
-onMounted(() => {
-  nodecg.Replicant('assets:background').on('change', (newVal) => {
-    document.getElementById('root').style.backgroundImage = `url(${newVal[0]?.url})`
-  })
-})
 </script>
 
 <style scoped>
