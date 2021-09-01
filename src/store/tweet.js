@@ -1,4 +1,3 @@
-import testData from './test-data/tweet.js'
 export default {
   state: () => ({
     tweet: null

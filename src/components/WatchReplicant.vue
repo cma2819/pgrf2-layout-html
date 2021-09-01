@@ -27,31 +27,40 @@ onMounted(() => {
       const currentIndex = Math.max(runArray.findIndex((run) => run.id === current), 0);
 
       additionNodecg.readReplicant('commentatorArray', 'speedcontrol-additions', (commentators) => {
+        additionNodecg.readReplicant('speedcontrolUserAdditionArray', 'speedcontrol-additions', (userAdditions) => {
 
-        const runs = runArray.slice(currentIndex, currentIndex + 4).map((run) => {
-          return {
-            title: run.game || '',
-            category: run.category || '',
-            platform: run.system || '',
-            startsAt: dtToFormatString(new Date(run.scheduled)),
-            est: run.estimate || '',
-            runners: run.teams.flatMap(team => team.players.map((player) => {
-              return {
-                id: team.id,
-                name: player.name,
-                accounts: {}
-              }
-            })),
-            commentators: commentators.filter(commentator => commentator.assignedRunIdArray
-              .includes(run.externalID)).map((commentator) => {
+          const runs = runArray.slice(currentIndex, currentIndex + 4).map((run) => {
+            return {
+              title: run.game || '',
+              category: run.category || '',
+              platform: run.system || '',
+              startsAt: dtToFormatString(new Date(run.scheduled)),
+              est: run.estimate || '',
+              runners: run.teams.flatMap(team => team.players.map((player) => {
+                const addition = userAdditions.find(add => add.id === player.customData.oengusId);
                 return {
-                  name: commentator.name,
-                  accounts: commentator.social,
+                  id: team.id,
+                  name: player.name,
+                  accounts: {
+                    twitch: player.social.twitch,
+                    twitter: addition?.social?.twitter,
+                    nico: addition?.social?.nico,
+                    youtube: addition?.social?.youtube,
+                  }
                 };
-              }),
-          };
+              })),
+              commentators: commentators.filter(commentator => commentator.assignedRunIdArray
+                .includes(run.externalID)).map((commentator) => {
+                  return {
+                    name: commentator.name,
+                    accounts: commentator.social,
+                  };
+                }),
+            };
+          });
+          state.dispatch('setRuns', runs);
         });
-        state.dispatch('setRuns', runs);
+
       });
     });
   });

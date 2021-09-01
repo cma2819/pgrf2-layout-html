@@ -1,11 +1,10 @@
-import testData from './test-data/timer.js'
 import { Duration } from 'luxon'
 
 export default {
   state: () => ({
-    time: testData.time,
-    status: testData.status,
-    splits: testData.split
+    time: '00:00:00',
+    status: 'suspend',
+    splits: []
   }),
   getters: {
     formattedTime: ({ time }) => {
