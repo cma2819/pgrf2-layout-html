@@ -5,6 +5,7 @@
     <div
       class="content-box"
       :class="{ next: upNext, 'later-than-next': !upNext }"
+      v-if="!run.isSetupBlock()"
     >
       <span class="title">{{ run.title }}</span>
       <div class="info">
@@ -23,6 +24,16 @@
         <div class="commentator">
           <span class="label">Commentator: </span>{{ run.joinedCommentatorNames() }}
         </div>
+      </div>
+    </div>
+    <div
+      class="content-box setup"
+      :class="{ next: upNext, 'later-than-next': !upNext }"
+      v-else
+    >
+      <span class="title">{{ run.title }}</span>
+      <div class="info">
+        <span class="label">Duration: </span><span class="time">{{ run.est }}</span>
       </div>
     </div>
   </div>
@@ -84,5 +95,13 @@ const props = defineProps({
   display: inline-block;
   font-size: 1.4em;
   width: 160px;
+}
+
+.setup {
+  color: rgba($color: black, $alpha: 0.4);
+
+  .time {
+    font-size: 1em;
+  }
 }
 </style>

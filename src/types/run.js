@@ -29,6 +29,10 @@ class Run {
   startsAtOnSchedule() {
     return this.startsAt.toFormat(formatOnSchedule)
   }
+
+  isSetupBlock() {
+    return !this.runners || this.runners.length === 0
+  }
 }
 
 export { Run }

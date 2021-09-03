@@ -10,7 +10,7 @@ export default [
         id: "team-id-a",
         name: '走者A',
         accounts: {
-          twitch: 'twitchA',
+          twitch: '',
           twitter: 'twitterA',
           youtube: 'youtubeA'
         }
@@ -125,5 +125,14 @@ export default [
         }
       }
     ]
+  },
+  {
+    title: 'Setup',
+    category: '',
+    platform: '',
+    startsAt: '2021/09/04 14:15:00',
+    est: '12:00:00',
+    runners: [],
+    commentators: []
   }
 ]
