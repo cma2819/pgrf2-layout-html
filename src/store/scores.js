@@ -4,8 +4,10 @@ export default {
     scores: testData
   }),
   getters: {
-    scoreOf: ({ scores }) => id =>
-      scores.find(score => score.id === id)?.score || 0
+    scoreOf: ({ scores }) => id => {
+      const score = scores.find(score => score.id === id)
+      return score ? score.score : 0
+    }
   },
   mutations: {
     setScores (state, scores) {

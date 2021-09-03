@@ -6,7 +6,7 @@
   </header>
   <main>
     <Schedule></Schedule>
-    <Tweet style="width: 480px"></Tweet>
+    <Tweet></Tweet>
   </main>
   <footer>
     <Footer></Footer>
@@ -41,9 +41,11 @@ header {
 }
 
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 480px;
   flex-direction: row;
   justify-content: space-between;
+  align-items: start;
   padding: 0 64px;
 }
 
