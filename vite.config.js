@@ -21,7 +21,7 @@ export default defineConfig({
         'sd-race': resolve(__dirname, 'graphics/sd-race/index.html'),
         'gb-solo': resolve(__dirname, 'graphics/gb-solo/index.html'),
         'gba-solo': resolve(__dirname, 'graphics/gba-solo/index.html'),
-        'nes-tetris': resolve(__dirname, 'graphics/gba-solo/index.html')
+        'nes-tetris': resolve(__dirname, 'graphics/nes-tetris/index.html')
       },
       external: [
         /assets/

@@ -12,13 +12,13 @@ export default {
       return runs.slice(0, 3).map(run => new Run(run))
     },
     currentEst ({ runs }) {
-      return runs[0].est
+      return runs[0]?.est || '00:00:00'
     },
     headerInfo ({ runs }) {
       return {
-        title: runs[0].title,
-        category: runs[0].category,
-        platform: runs[0].platform
+        title: runs[0]?.title || '',
+        category: runs[0]?.category || '',
+        platform: runs[0]?.platform || ''
       }
     },
     footerInfo ({ runs }) {
@@ -35,9 +35,9 @@ export default {
   mutations: {
     setRuns (state, runs) {
       state.runs = runs
-      state.currentRunners = runs[0].runners
+      state.currentRunners = (runs[0]?.runners || [])
         .map(runner => new Participant(runner))
-      state.currentCommentators = runs[0].commentators
+      state.currentCommentators = (runs[0]?.commentators || [])
         .map(commentator => new Participant(commentator))
     },
     rotateAccounts ({ currentRunners, currentCommentators }) {

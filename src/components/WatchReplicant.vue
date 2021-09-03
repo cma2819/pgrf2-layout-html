@@ -102,6 +102,12 @@ onMounted(() => {
       content: newVal.text,
     });
   });
+
+/** @type import('../../../browser/global').BundleNodecgInstance */
+  const bundleNodecg = nodecg;
+  bundleNodecg.Replicant('runner-scores').on('change', (newVal) => {
+    state.dispatch('setScores', newVal.filter(score => score.score !== null));
+  })
 });
 
 </script>

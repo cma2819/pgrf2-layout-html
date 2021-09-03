@@ -6,7 +6,7 @@
   </header>
   <main>
     <div id="runners">
-      <div class="runner">
+      <div class="runner" v-if="runners[0]">
         <Video :style="{ width, height }"></Video>
         <InfoBox dense label="Runner I">
           <TextValue
@@ -18,7 +18,7 @@
           <Split :id="runners[0].id"></Split>
         </slot>
       </div>
-      <div class="runner">
+      <div class="runner" v-if="runners[1]">
         <Video :style="{ width, height }"></Video>
         <InfoBox dense label="Runner II" v-if="runners[1]">
           <TextValue

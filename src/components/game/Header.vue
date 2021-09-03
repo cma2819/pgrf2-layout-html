@@ -21,8 +21,6 @@ onMounted(() => {
   });
 })
 
-create
-
 </script>
 
 <style lang="scss" scoped>
