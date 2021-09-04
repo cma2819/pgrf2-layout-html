@@ -21,7 +21,7 @@
         <div class="runner">
           <span class="label">Runner: </span>{{ run.joinedRunnerNames() }}
         </div>
-        <div class="commentator">
+        <div class="commentator" v-if="run.commentators.length > 0">
           <span class="label">Commentator: </span>{{ run.joinedCommentatorNames() }}
         </div>
       </div>
