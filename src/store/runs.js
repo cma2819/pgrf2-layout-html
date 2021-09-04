@@ -22,7 +22,7 @@ export default {
       }
     },
     footerInfo ({ runs }) {
-      if (runs.length > 1) {
+      if (runs.length > 1 && runs[1].category) {
         return {
           title: runs[1].title,
           category: runs[1].category

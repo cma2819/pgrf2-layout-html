@@ -1,6 +1,6 @@
 <template>
   <transition :name="`slide-from-${from}`">
-    <div id="tweet-wrapper" v-if="tweet">
+    <div id="tweet-wrapper" :class="wrapperStyle" v-if="tweet">
       <div id="tweet" v-if="tweet">
         <div id="tweet-label" class="label">
           TWEET WITH <span>#PGRF2</span>:
@@ -39,11 +39,25 @@ const props = defineProps({
 
 const store = useStore()
 const tweet = computed(() => store.getters.tweet)
+const wrapperStyle = computed(() => ({
+  'from-left': props.from === 'left',
+  'from-right': props.from === 'right'
+}))
 </script>
 
 <style lang="scss" scoped>
+$borderStyle: 1px solid rgba($color: white, $alpha: 0);
+
 #tweet-wrapper {
   overflow: hidden;
+
+  &.from-left {
+    border-left: $borderStyle;
+  }
+
+  &.from-right {
+    border-right: $borderStyle;
+  }
 }
 
 #tweet {
@@ -91,7 +105,6 @@ $easeOutCirc: cubic-bezier(0, 0.55, 0.45, 1);
 $easeInCirc: cubic-bezier(0.55, 0, 1, 0.45);
 
 .slide-from-left-enter-active {
-  border-left: 1px solid;
   animation: border $duration $easeOutCirc;
 
   #tweet {
@@ -100,7 +113,6 @@ $easeInCirc: cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 .slide-from-left-leave-active {
-  border-left: 1px solid;
   animation: border $duration $easeOutCirc;
 
   #tweet {
@@ -109,7 +121,6 @@ $easeInCirc: cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 .slide-from-right-enter-active {
-  border-right: 1px solid;
   animation: border $duration $easeOutCirc;
 
   #tweet {
@@ -118,7 +129,6 @@ $easeInCirc: cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 .slide-from-right-leave-active {
-  border-right: 1px solid;
   animation: border $duration $easeOutCirc;
 
   #tweet {

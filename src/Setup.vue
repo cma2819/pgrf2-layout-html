@@ -6,7 +6,7 @@
   </header>
   <main>
     <Schedule></Schedule>
-    <Tweet></Tweet>
+    <Tweet from="right"></Tweet>
   </main>
   <footer>
     <Footer></Footer>
