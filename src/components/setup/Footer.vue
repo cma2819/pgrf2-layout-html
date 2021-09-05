@@ -1,6 +1,6 @@
 <template>
   <div id="spotify">
-    <span>Now playing: {{ music.title }} / {{ music.artist }}</span>
+    <span>Now playing: {{ musicInfo }}</span>
   </div>
   <div id="hashtag-guide">hashtag: <span>#PGRF2</span></div>
 </template>
@@ -10,7 +10,7 @@ import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 const store = useStore()
-const music = computed(() => store.state.spotify)
+const musicInfo = computed(() => store.getters.shortSpotifyInfo)
 </script>
 
 <style lang="scss" scoped>
