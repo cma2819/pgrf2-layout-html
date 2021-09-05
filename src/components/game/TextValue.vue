@@ -15,6 +15,9 @@
           <SvgIcon type="mdi" :path="mdiYoutube" size="1.1em" style="top: 0.2em"></SvgIcon>
           {{ account.youtube }}
         </span>
+        <span v-else-if="account.nico">
+          {{ account.nico }}
+        </span>
         <span v-else>-</span>
       </transition>
     </p>

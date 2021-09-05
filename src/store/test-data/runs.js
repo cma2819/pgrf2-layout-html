@@ -10,6 +10,7 @@ export default [
         id: "team-id-a",
         name: '走者A',
         accounts: {
+          nico: 'co12345678',
           twitch: '',
           twitter: 'twitterA',
           youtube: 'youtubeA'
