@@ -17,7 +17,7 @@ const logo = ref('');
 
 onMounted(() => {
   nodecg.Replicant('assets:logo').on('change', (newVal) => {
-    logo.value = newVal.url;
+    logo.value = newVal[0]?.url || '';
   });
 })
 
